@@ -1,6 +1,8 @@
-# X (Twitter) 文章下载工具
+# X Downloader
 
 将 X 平台（Twitter）的推文/文章链接下载为本地 **Markdown** 文件，图片独立保存到文件夹中并在 Markdown 中引用。
+
+**无需 API Key，无需登录，开箱即用。**
 
 ## ✨ 功能
 
@@ -17,40 +19,25 @@
 
 ## 📦 安装
 
-### 方式一：venv（推荐）
-
 ```bash
-cd /Volumes/ex-ssd1/web3-learning2026/yd-35期/01-openclaw/x-文档下载工具
+git clone https://github.com/cwybruce/x-downloader.git
+cd x-downloader
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 方式二：直接安装
-
-```bash
-pip3 install requests
-```
-
 ## 🚀 使用方法
 
-### 前置步骤
-
 ```bash
-# 进入项目目录
-cd /Volumes/ex-ssd1/web3-learning2026/yd-35期/01-openclaw/x-文档下载工具
-
 # 激活虚拟环境
 source .venv/bin/activate
-```
 
-### 基本用法
-
-```bash
+# 下载推文
 python x_downloader.py "<推文链接>"
 ```
 
-### 常用命令示例
+### 命令示例
 
 ```bash
 # 下载普通推文
@@ -83,7 +70,6 @@ output/
 ├── username_123456.md
 └── username_123456_images/
     ├── 1.jpg
-    ├── 2.jpg
     └── ...
 ```
 
@@ -94,22 +80,20 @@ output/
 ├── username_123456.md              # 完整文章 Markdown
 └── username_123456_images/
     ├── cover.jpg                   # 封面图
-    ├── article_1.jpg               # 文章内嵌图片
+    ├── article_1.png               # 文章内嵌图片
     └── ...
 ```
 
 ## 🔗 支持的 URL 格式
 
-```
-https://x.com/user/status/123456
-https://x.com/user/status/123456?s=20     # 带参数也支持
-https://twitter.com/user/status/123456
-https://fxtwitter.com/user/status/123456
-https://fixupx.com/user/status/123456
-https://vxtwitter.com/user/status/123456
-```
+- `https://x.com/user/status/123456`
+- `https://x.com/user/status/123456?s=20` （带参数也支持）
+- `https://twitter.com/user/status/123456`
+- `https://fxtwitter.com/user/status/123456`
+- `https://fixupx.com/user/status/123456`
+- `https://vxtwitter.com/user/status/123456`
 
-## 📋 输出 Markdown 格式
+## 📋 输出 Markdown 示例
 
 ### 普通推文
 
@@ -142,16 +126,7 @@ https://vxtwitter.com/user/status/123456
 
 ## 章节标题
 
-文章正文，支持 **加粗**、*斜体*、[链接](url)
-
-1. 有序列表
-2. 有序列表
-
-- 无序列表
-
-> 引用块
-
-代码块也完整保留
+文章正文，包含 **加粗**、*斜体*、[链接](url)、代码块等
 
 ---
 *来源: https://x.com/username/status/123456*
@@ -164,3 +139,7 @@ https://vxtwitter.com/user/status/123456
 - 仅 `requests` 一个外部依赖
 - X Article 使用 Draft.js 格式解析，支持标题、列表、引用、代码块、图片等
 - 图片下载为原始质量
+
+## 📄 License
+
+MIT
