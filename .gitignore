@@ -24,4 +24,5 @@ output/
 Thumbs.db
 
 # Agent configs (local)
-.agents/
+.agents/*
+!.agents/skills/

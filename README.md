@@ -140,6 +140,19 @@ output/
 - X Article 使用 Draft.js 格式解析，支持标题、列表、引用、代码块、图片等
 - 图片下载为原始质量
 
+## 🤖 作为 AI Agent Skill 使用 (OpenClaw 等)
+
+本项目自带了一个完整的 Agent Skill（目前已兼容 OpenClaw/ClawdBot 等工具）。使用该 Skill 后，你可以直接在 Telegram 或对话框中命令你的 AI 助理帮你下载推文。
+
+**安装步骤：**
+
+1. 将本仓库克隆到本地。
+2. 将仓库内 `.agents/skills/x-downloader` 文件夹复制到你自己的 AI Agent 项目的 `.agents/skills/` 目录下。
+3. 如果你的 Agent 不在同一台机器或同个目录，请确保修改 `SKILL.md` 中 Python 脚本的绝对路径，指向你实际的项目路径。
+4. 现在你可以对你的 AI Agent 说：
+   - *“帮我下载这篇 X 平台的长文章，保存下来：https://x.com/...”*
+   - *“把这条推文和它的线程存到本地”*
+
 ## 📄 License
 
 MIT
